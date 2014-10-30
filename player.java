@@ -9,7 +9,9 @@ public class player {
 		this.symbol = symbol;
 		score = 0;
 	}
-
+	public void addScore(){
+		this.score++;
+	}
 	public void setSymbol(String newSymbol){
 		this.symbol = newSymbol;
 	}
