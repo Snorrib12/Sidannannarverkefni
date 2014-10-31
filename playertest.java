@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class playertest {
-
+	
+	
 	@Test
 	public void setsymboltest() {
 		player testplayer = new player("x");
