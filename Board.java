@@ -1,10 +1,16 @@
 package Sidannarverkefni;
 
 public class Board {
-	public String[] board;
+	private String[] board;
 	
 	public Board(){
 		board = new String[9];
+	}
+	public String[] board(){
+		return this.board;
+	}
+	public String board(int place){
+		return this.board[place];
 	}
 	public void inputSymbol(String symbol,int place){
 		this.board[place] = symbol;

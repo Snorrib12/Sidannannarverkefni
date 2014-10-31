@@ -2,12 +2,18 @@ package Sidannarverkefni;
 
 public class player {
 	
-	public String symbol;
-	public int score;
+	private String symbol;
+	private int score;
 	
 	public player(String symbol){
 		this.symbol = symbol;
 		score = 0;
+	}
+	public String symbol(){
+		return this.symbol;
+	}
+	public int score(){
+		return this.score;
 	}
 	public void addScore(){
 		this.score++;

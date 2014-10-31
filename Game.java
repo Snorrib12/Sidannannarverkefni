@@ -6,11 +6,11 @@ import edu.princeton.cs.introcs.StdOut;
 public class Game {
 	public static void printBoard(Board board){
 		for(int i = 1; i <= 9;i++){
-			if(board.board[i-1] == null){
+			if(board.board(i-1) == null){
 				StdOut.print(". ");
 			}
 			else{
-				StdOut.print(board.board[i-1] + " ");
+				StdOut.print(board.board(i-1) + " ");
 			}
 			if(i%3 == 0 ) StdOut.println();
 		}
@@ -42,7 +42,7 @@ public class Game {
 		    	  printBoard(playBoard);
 		    	  winner = playBoard.Win();
 		    	  if(winner != null){
-		    		  if(winner == player1.symbol){
+		    		  if(winner == player1.symbol()){
 		    			  StdOut.println("player 1 wins");
 		    			  player1.win();
 		    			  player2.lose();
@@ -56,7 +56,7 @@ public class Game {
 		    	  }
 		    	  
 	    	  }
-		      StdOut.println("score is player1: "+ player1.score + " player2: " + player2.score);
+		      StdOut.println("score is player1: "+ player1.score() + " player2: " + player2.score());
 	    	  StdOut.println("continue?(y/n)");
 		      continput = StdIn.readLine();
 		      if(continput.toLowerCase() == "y") {
