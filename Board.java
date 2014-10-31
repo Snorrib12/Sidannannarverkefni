@@ -15,6 +15,15 @@ public class Board {
 	public void inputSymbol(String symbol,int place){
 		this.board[place] = symbol;
 	}
+	public boolean isValid(int place){
+		if(place < 0 || place > 8){
+			return false;
+		}
+		else if(board[place] != null){
+			return false;
+		}
+		return true;
+	}
 	public String Win(){
 		for(int i = 0 ; i <3;i++){
 			if(this.board[0+i] == this.board[3+i] && this.board[0+i] == this.board[6+i]){

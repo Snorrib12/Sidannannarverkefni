@@ -21,7 +21,7 @@ public class Game {
 	      player player1 = new player("x");
 	      player player2 = new player("o");
 	      boolean cont = true;
-	      int input = 0;
+	      int input = -1;
 	      String continput = "";
 	      String winner = null;
 	      boolean player = true;
@@ -30,7 +30,10 @@ public class Game {
 	    	  StdOut.print("input placement for your symbol (0-8)");
 	    	  StdOut.println();
 	    	  while(true){
-	    		  input = StdIn.readInt();
+	    		  while(!playBoard.isValid(input)){
+	    			  input = StdIn.readInt();
+	    		  }
+	    		  
 		    	  if(player){
 		    		  playBoard.inputSymbol("x", input);
 		    		  player = !player;

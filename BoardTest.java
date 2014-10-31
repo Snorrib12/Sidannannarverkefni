@@ -15,6 +15,14 @@ public class BoardTest {
 		
 	}
 	@Test
+	public void isValidTest(){
+		Board testBoard = new Board();
+		assertFalse("input in place 10 is invalid",testBoard.isValid(10));
+		assertTrue("input on place 1 is valid",testBoard.isValid(1));
+		testBoard.inputSymbol("x", 1);
+		assertFalse("input on place 1 is now invalid",testBoard.isValid(1));
+	}
+	@Test
 	public void WinTest(){
 		Board testBoard1 = new Board();
 		testBoard1.inputSymbol("x", 0);
