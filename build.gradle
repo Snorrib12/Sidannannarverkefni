@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'Sidannarverkefni.Game'
+version = '0.1'
+
+//forrit og library sett saman 
+//"gradle MakeJar" til að keyra
+task MakeJar(type: Jar) {
+    baseName = 'TicTacToe'
+	manifest {
+        attributes 'Implementation-Title': 'TicTacToe',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'Sidannarverkefni.Game'
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+repositories {
+	//repo fyrir library. Ekki notað, öll library eru í lib möppunni.
+	//jcenter()
+}
+
+dependencies {
+	//Junit sett inn fyrir test case. Ekki notað, öll library eru í lib möppunni.
+   //testCompile group: 'junit', name: 'junit', version: '4.+'
+
+   //náð í library úr möppunni lib
+   compile fileTree('lib')
+}
+
+
+test {
+	//Loggar hvernig gengur með testcase
+    testLogging {
+        events 'started', 'passed'
+    }
+}
+
+run{
+	//Kveikt er á console inputi
+    standardInput = System.in
+}
