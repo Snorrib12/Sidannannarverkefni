@@ -61,7 +61,7 @@ public class Game {
 	    	  }
 		      StdOut.println("score is player1: "+ player1.score() + " player2: " + player2.score());
 	    	  StdOut.println("continue?(y/n)");
-		      continput = StdIn.readLine();
+		      continput = StdIn.readString();
 		      if(continput.toLowerCase() == "y") {
 		    	  cont = true;
 		      }
